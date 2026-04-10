@@ -1,43 +1,114 @@
-import Link from "next/link"
-import { HoverBorderGradient } from "./ui/hover-border-gradient";
-import { Vortex } from "./ui/vortex";
+"use client";
 
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Vortex } from "./ui/vortex";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { SiNetlify } from "react-icons/si";
 
 function HeroSection() {
+  const roles = ["Frontend Developer", "Web Developer", "Software Developer", "Data Analyst"];
+  const roleDescriptions = [
+    "I'm a Frontend Developer. I create responsive, user-friendly interfaces with modern web technologies.",
+    "I'm a Web Developer. I build dynamic and fully functional websites that deliver seamless experiences.",
+    "I'm a Software Developer. I develop scalable and efficient applications with clean, maintainable code.",
+    "I'm a Data Analyst. I analyze data and provide insights to help businesses make informed decisions."
+  ];
+
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+  const [fade, setFade] = useState(true);
+
+  // Typewriter effect
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const fullText = roles[index];
+
+      if (!deleting) {
+        setText(fullText.substring(0, subIndex + 1));
+        setSubIndex(subIndex + 1);
+
+        if (subIndex + 1 === fullText.length) {
+          setTimeout(() => setDeleting(true), 1000);
+        }
+      } else {
+        setText(fullText.substring(0, subIndex - 1));
+        setSubIndex(subIndex - 1);
+
+        if (subIndex === 0) {
+          setDeleting(false);
+          setIndex((prev) => (prev + 1) % roles.length);
+          setFade(false);
+          setTimeout(() => setFade(true), 100); 
+        }
+      }
+    }, deleting ? 50 : 150);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, deleting, roles]);
+
   return (
-    
-    <div
-      className="h-auto md:h-160 w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0"
-    >
+    <div className="h-auto md:h-160 w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
 
       <Vortex
         backgroundColor="black"
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
       >
-        <div className="p-4 relative z-10 w-full text-center" >
-            <h3 className="text-white">L I G N</h3>
-          <h1
-            className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-linear-to-b from-neutral-50 to-neutral-400"
-          ><span className="text-xl">Hi, My Name is </span> <br /> Sanjana Sahani</h1>
+        <div className="p-4 relative z-10 w-full text-center">
+
+          {/* Typewriter Hero */}
+          <h1 className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold text-white">
+            I'm a{" "}
+            <span className="bg-linear-to-r from-purple-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+              {text}
+            </span>
+            <span className="blinking-cursor">|</span>
+          </h1>
+
+          {/* Dynamic Description with fade */}
           <p
-            className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto"
-          >I'm a Developer . My expertise is to create, design and develop Websites.</p>
-          <div className="mt-4">
-            <Link href={"/"}>
-              <div className="flex justify-center text-center border-blue-900-100">
-                <HoverBorderGradient
-                  className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 border-blue-900 border-2"
-                >
-                  <span>HIRE ME</span>
-                </HoverBorderGradient>
-              </div>
+            className={`mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"
+              }`}
+          >
+            {roleDescriptions[index]}
+          </p>
+
+          {/* Social Icons */}
+          <div className="mt-6 flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/sanjana-sahani-b33b7423b" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500 text-2xl transition-colors">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com/SanjanaSahani" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 text-2xl transition-colors">
+              <FaGithub />
+            </a>
+            <a href="https://www.instagram.com/_shimmerspirit_" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-500 text-2xl transition-colors">
+              <FaInstagram />
+            </a>
+            <a href="https://app.netlify.com/teams/sanjanasahani/overview" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-2xl transition-colors">
+              <SiNetlify />
+            </a>
+          </div>
+
+          {/* Animated Button */}
+          <div className="mt-6 flex justify-center">
+            <Link href="/">
+              <button className="relative inline-flex items-center justify-center px-8 py-3 font-medium text-white rounded-full overflow-hidden group">
+                <span className="absolute inset-0 rounded-full p-0.5 bg-[linear-gradient(270deg,#a855f7,#3b82f6,#6366f1,#a855f7)] bg-size-[600%_600%] animate-borderMove"></span>
+                <span className="absolute inset-0.5 bg-black rounded-full"></span>
+                <span className="absolute inset-0 bg-linear-to-r from-purple-500 via-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></span>
+                <span className="relative text-sm md:text-base tracking-wide">
+                  Hire Me
+                </span>
+              </button>
             </Link>
           </div>
+
         </div>
-        </Vortex>       
+      </Vortex>
     </div>
-  )
+  );
 }
 
-
-export default HeroSection
+export default HeroSection;
