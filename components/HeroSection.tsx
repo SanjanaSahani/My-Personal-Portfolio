@@ -41,7 +41,7 @@ function HeroSection() {
           setDeleting(false);
           setIndex((prev) => (prev + 1) % roles.length);
           setFade(false);
-          setTimeout(() => setFade(true), 100); 
+          setTimeout(() => setFade(true), 100);
         }
       }
     }, deleting ? 50 : 150);
@@ -59,7 +59,7 @@ function HeroSection() {
         <div className="p-4 relative z-10 w-full text-center">
 
           {/* Typewriter Hero */}
-          <h1 className="mt-20 md:mt-0 text-4xl md:text-7xl font-bold text-white">
+          <h1 className="mt-40 pt-32 md:mt-0 text-4xl md:text-7xl font-bold text-white">
             I'm a{" "}
             <span className="bg-linear-to-r from-purple-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
               {text}
@@ -69,7 +69,7 @@ function HeroSection() {
 
           {/* Dynamic Description with fade */}
           <p
-            className={`mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"
+            className={`mt-10 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"
               }`}
           >
             {roleDescriptions[index]}
@@ -92,7 +92,8 @@ function HeroSection() {
           </div>
 
           {/* Animated Button */}
-          <div className="mt-6 flex justify-center">
+          <div className="mt-10 flex justify-center gap-4">
+            {/* Hire Me Button */}
             <Link href="/">
               <button className="relative inline-flex items-center justify-center px-8 py-3 font-medium text-white rounded-full overflow-hidden group">
                 <span className="absolute inset-0 rounded-full p-0.5 bg-[linear-gradient(270deg,#a855f7,#3b82f6,#6366f1,#a855f7)] bg-size-[600%_600%] animate-borderMove"></span>
@@ -103,6 +104,18 @@ function HeroSection() {
                 </span>
               </button>
             </Link>
+
+            {/* Download Resume Button */}
+            <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="relative inline-flex items-center justify-center px-8 py-3 font-medium text-white rounded-full overflow-hidden group">
+                <span className="absolute inset-0 rounded-full p-0.5 bg-[linear-gradient(270deg,#22c55e,#06b6d4,#3b82f6,#22c55e)] bg-size-[600%_600%] animate-borderMove"></span>
+                <span className="absolute inset-0.5 bg-black rounded-full"></span>
+                <span className="absolute inset-0 bg-linear-to-r from-green-400 via-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></span>
+                <span className="relative text-sm md:text-base tracking-wide">
+                  Download Resume
+                </span>
+              </button>
+            </a>
           </div>
 
         </div>
