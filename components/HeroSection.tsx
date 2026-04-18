@@ -50,7 +50,7 @@ function HeroSection() {
   }, [subIndex, index, deleting, roles]);
 
   return (
-    <div className="h-auto md:h-160 w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
+    <div className="h-auto md:h-screen w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-10 md:py-0">
 
       <Vortex
         backgroundColor="black"
@@ -59,7 +59,7 @@ function HeroSection() {
         <div className="p-4 relative z-10 w-full text-center">
 
           {/* Typewriter Hero */}
-          <h1 className="mt-40 pt-32 md:mt-0 text-4xl md:text-7xl font-bold text-white">
+          <h1 className="mt-28 pt-32 md:mt-0 text-4xl md:text-7xl font-bold text-white">
             I'm a{" "}
             <span className="bg-linear-to-r from-purple-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
               {text}

@@ -2,9 +2,10 @@ import { HoverEffect } from "@/components/ui/card-hover-effect"
 
 export function CardHoverEffect() {
   return (
-    <div className=" px-8 bg-black">
-        <h1 className="text-white text-center text-4xl mt-32 p-10">Services</h1>
-      <HoverEffect className="max-w-5xl mx-auto" items={projects} />
+    <div className="relative overflow-hidden px-8 bg-black">
+       <div className="absolute inset-0 bg-[linear-gradient(transparent_39px,rgba(255,255,255,0.2)_40px),linear-gradient(90deg,transparent_39px,rgba(255,255,255,0.2)_40px)] bg-size-[40px_40px] pointer-events-none"></div>
+        <h1 className="text-white text-center text-4xl mt-10 p-10">Services</h1>
+      <HoverEffect className="max-w-5xl mx-auto mb-10" items={projects} />
     </div>
   );
 }
