@@ -7,13 +7,13 @@ export function ExTracingBeam() {
     <TracingBeam className="px-6">
       <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
         <div className="max-w-5xl mx-auto antialiased pt-4 relative">
-          <h1 className="text-white text-4xl text-center p-10"> Experiences</h1>
+          <h1 className="text-white text-4xl text-center my-10 p-10"> Experiences</h1>
           {textContent.map((item, index) => (
             <div key={`content-${index}`} className="mb-10 mt-6 flex">
-              <div style={{ fontSize: "25px", marginRight: "250px" }} className="text-white">{item.date}</div>
+              <div style={{ fontSize: "25px", marginRight: "110px" }} className="text-white">{item.date}</div>
 
               <div>
-                <h2 className="bg-black text-white rounded-full text-2xl w-fit px-4 py-1 mb-4">
+                <h2 className="bg-black text-white rounded-full text-2xl w-fit px-1 py-1 mb-4">
                   {item.role}
                 </h2>
 
@@ -36,7 +36,7 @@ export function ExTracingBeam() {
 
 const textContent = [
   {
-    date: "feb 2026 - Mar 2026",
+    date: "Feb 2026 - Mar 2026",
     role: "Frontend Development Intern",
     company: "Saiket Systems",
     description: (

@@ -1,6 +1,8 @@
 import { CardHoverEffect } from "@/components/CardHoverEffect";
 import HeroSection from "@/components/HeroSection";
 import { ExTracingBeam } from "@/components/ExTracingBeam";
+import { SkillInfiniteMovingCards } from "@/components/InfiniteMovingCards";
+
 
 
 
@@ -11,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <CardHoverEffect />
       <ExTracingBeam />
+      <SkillInfiniteMovingCards />
     </main>
 
   );
