@@ -2,6 +2,7 @@ import { CardHoverEffect } from "@/components/CardHoverEffect";
 import HeroSection from "@/components/HeroSection";
 import { ExTracingBeam } from "@/components/ExTracingBeam";
 import { SkillInfiniteMovingCards } from "@/components/InfiniteMovingCards";
+import { StickyScrollReveal } from "@/components/StickyScrollReveal";
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
       <CardHoverEffect />
       <ExTracingBeam />
       <SkillInfiniteMovingCards />
+      <StickyScrollReveal />
     </main>
 
   );
