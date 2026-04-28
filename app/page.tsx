@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import { ExTracingBeam } from "@/components/ExTracingBeam";
 import { SkillInfiniteMovingCards } from "@/components/InfiniteMovingCards";
 import { StickyScrollReveal } from "@/components/StickyScrollReveal";
+import { BackgroundBeam } from "@/components/BackgroundBeam";
 
 
 
@@ -16,6 +17,7 @@ export default function Home() {
       <ExTracingBeam />
       <SkillInfiniteMovingCards />
       <StickyScrollReveal />
+      <BackgroundBeam />
     </main>
 
   );
