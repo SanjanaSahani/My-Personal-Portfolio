@@ -4,6 +4,7 @@ import { ExTracingBeam } from "@/components/ExTracingBeam";
 import { SkillInfiniteMovingCards } from "@/components/InfiniteMovingCards";
 import { StickyScrollReveal } from "@/components/StickyScrollReveal";
 import { BackgroundBeam } from "@/components/BackgroundBeam";
+import Footer from "@/components/Footer";
 
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <SkillInfiniteMovingCards />
       <StickyScrollReveal />
       <BackgroundBeam />
+      <Footer />
     </main>
 
   );
