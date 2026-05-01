@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { BackgroundBeams } from "../../components/ui/background-beams";
 
-export default function BackgroundBeam() {
+export default function ContactSection() {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState("");
 

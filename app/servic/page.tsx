@@ -1,6 +1,6 @@
 import { HoverEffect } from "../../components/ui/card-hover-effect"
 
-export default function CardHoverEffect() {
+export default function ServicesSection() {
   return (
     <div className="relative overflow-hidden px-8 bg-black">
        <div className="absolute inset-0 bg-[linear-gradient(transparent_39px,rgba(255,255,255,0.2)_40px),linear-gradient(90deg,transparent_39px,rgba(255,255,255,0.2)_40px)] bg-size-[40px_40px] pointer-events-none"></div>

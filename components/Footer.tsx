@@ -25,10 +25,10 @@ export default function Footer() {
             <a href="/about" className="hover:text-white transition">
               About
             </a>
-             <a href="/contact" className="hover:text-white transition">
+             <a href="/skill" className="hover:text-white transition">
               Skill
             </a>
-            <a href="/projects" className="hover:text-white transition">
+            <a href="/project" className="hover:text-white transition">
               Projects
             </a>
            

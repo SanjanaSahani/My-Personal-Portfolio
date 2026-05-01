@@ -94,7 +94,7 @@ function HeroSection() {
           {/* Animated Button */}
           <div className="mt-10 flex justify-center gap-4">
             {/* Hire Me Button */}
-            <Link href="/">
+            <Link href="/contact">
               <button className="relative inline-flex items-center justify-center px-8 py-3 font-medium text-white rounded-full overflow-hidden group">
                 <span className="absolute inset-0 rounded-full p-0.5 bg-[linear-gradient(270deg,#a855f7,#3b82f6,#6366f1,#a855f7)] bg-size-[600%_600%] animate-borderMove"></span>
                 <span className="absolute inset-0.5 bg-black rounded-full"></span>
